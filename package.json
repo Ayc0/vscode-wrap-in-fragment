@@ -7,6 +7,7 @@
   "engines": {
     "vscode": "^1.70.0"
   },
+  "repository": "https://github.com/Ayc0/vscode-wrap-in-fragment",
   "categories": [
     "Other"
   ],
