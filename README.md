@@ -1,4 +1,4 @@
-# Change Case Extension for Visual Studio Code
+# Wrap text in Fragment for Visual Studio Code
 
 ## Install
 
