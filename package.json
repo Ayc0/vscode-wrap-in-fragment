@@ -1,0 +1,55 @@
+{
+  "name": "vscode-wrap-in-fragment",
+  "description": "Quickly wrap the current selection in a Fragment",
+  "license": "MIT",
+  "version": "0.0.1",
+  "publisher": "Ayc0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.wrapInFragment.run"
+  ],
+  "main": "./lib/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.wrapInFragment.run",
+        "title": "Wrap code in Fragment"
+      }
+    ]
+  },
+  "configuration": {
+    "type": "object",
+    "title": "Wrap in Fragment configuration",
+    "properties": {
+      "wrapInFragment.fragmentFactory": {
+        "type": "string",
+        "default": "",
+        "description": "What will be injected around words (leave it blank to use <></>)"
+      }
+    }
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc -p ./",
+    "vscode:prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.70.0",
+    "@vscode/vsce": "^2.18.0",
+    "ava": "^5.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register/transpile-only"
+    ]
+  }
+}
