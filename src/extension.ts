@@ -29,15 +29,14 @@ export function run() {
         const initialText = document.getText(selection);
 
         const replacement = wrapTextInFragment(initialText, fragmentFactory);
-        // We always add a balanced amount of chars +1 to the right (because of the closing tag)
-        const offset = (replacement.length - initialText.length - 1) / 2;
+        const offset = replacement.length - initialText.length;
 
         return {
           selection,
           replacement,
           newSelection: new vscode.Selection(
             selection.start.line,
-            selection.start.character + offset,
+            selection.start.character,
             selection.end.line,
             selection.end.character + offset
           ),

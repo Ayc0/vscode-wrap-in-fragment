@@ -1,5 +1,6 @@
 {
   "name": "vscode-wrap-in-fragment",
+  "displayName": "Wrap in Fragment",
   "description": "Quickly wrap the current selection in a Fragment",
   "license": "MIT",
   "version": "0.0.1",
@@ -36,6 +37,7 @@
   },
   "scripts": {
     "build": "rm -rf lib && tsc -p ./",
+    "test": "ava",
     "vscode:prepublish": "yarn build"
   },
   "devDependencies": {

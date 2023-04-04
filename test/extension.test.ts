@@ -12,6 +12,12 @@ test("wrapTextInFragment with default fragment", (t) => {
   t.is(wrapTextInFragment("<div>Hello</div>"), "<><div>Hello</div></>");
 });
 
+test("wrapTextInFragment in some edge cases", (t) => {
+  t.is(wrapTextInFragment("1 && '2'"), "<>{1 && '2'}</>");
+  t.is(wrapTextInFragment('"1" && 2'), '<>{"1" && 2}</>');
+  t.is(wrapTextInFragment("\"1\" && '2'"), "<>{\"1\" && '2'}</>");
+});
+
 test("wrapTextInFragment with React.Fragment", (t) => {
   t.is(
     wrapTextInFragment("'Hello'", "React.Fragment"),
